@@ -17,7 +17,7 @@ namespace modul_07
         IMongoCollection<BsonDocument> collection;
 
 
-        // Constructor? Tror jeg?
+        // Constructor
         public Persistency()
         {
             dbClient = new MongoClient();
@@ -28,6 +28,11 @@ namespace modul_07
         public void opretansatte(BsonDocument ansatte)
         {
             collection.InsertOne(ansatte);
+        }
+
+        public List<BsonDocument> GetAnsatte()
+        {
+            return collection.Find(new BsonDocument()).ToList();
         }
     }
 }

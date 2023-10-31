@@ -19,6 +19,16 @@ namespace modul_07
             };
 
             Persistency persistency = new Persistency();
+            persistency.opretansatte(doc);
+
+            // tester:
+
+            Console.WriteLine("---- Opretter ny ansat ----\n");
+            persistency.opretansatte(doc);
+
+            Console.WriteLine("---- Får alle ansatte: ----\n");
+            var result = persistency.GetAnsatte();
+            Console.WriteLine(result);
         }
     }
 }
